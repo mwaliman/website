@@ -1,0 +1,8 @@
+<% @posts.each do |post| %>
+	<h2> <%= post.title %></h2>
+	<div> <%= truncate(post.body, :length => 35) %></div>
+	<br>
+	<%= link_to "Read Post", post%>
+<% end %>
+
+<%= will_paginate @posts, previous_label: "Older", next_label: "Newer", inner_window: 1, outer_window: 0 %>
