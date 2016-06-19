@@ -20,10 +20,16 @@ class ProjectsController < ApplicationController
 	def show
 	end
 
+	def edit
+	end
+	
+	def destroy
+	end
+
 	private
 
 	def find_project
-		@project = Project.find(params[:id])
+		@project = Project.friendly.find(params[:id])
 	end
 
 	def project_params
