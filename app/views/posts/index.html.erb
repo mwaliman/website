@@ -1,8 +1,13 @@
-<% @posts.each do |post| %>
-	<h2> <%= post.title %></h2>
-	<div> <%= truncate(post.body, :length => 35) %></div>
-	<br>
-	<%= link_to "Read Post", post%>
-<% end %>
+<h1 id="page_title">Stuff I've Written</h1>
 
-<%= will_paginate @posts, previous_label: "Older", next_label: "Newer", inner_window: 1, outer_window: 0 %>
+<div id="posts_wrapper" class="skinny_wrapper">
+	<% @posts.each do |post| %>
+		<div class="post">
+			<p class="date"><%= post.created_at.strftime('%A, %B %d') %></p>
+			<h2><a><%= link_to post.title, post %></a></h2>
+			<hr>
+		</div>
+	<% end %>
+</div>
+
+<%= will_paginate @posts %>
