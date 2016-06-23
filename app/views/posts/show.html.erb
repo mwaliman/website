@@ -8,7 +8,12 @@
 		<%= markdown @post.body%>
 	</div>
 	<hr>
-
+	<% if user_signed_in? %>
+		<div id="admin_links">
+			<%= link_to "Edit", edit_post_path(@post) %>
+			<%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" } %>	
+		</div>
+	<%end%>
 	<div id="share_box">
 		<p>Share <%= @post.title %></p>
 		<!-- Twitter -->
@@ -21,5 +26,4 @@
 
 	<hr>
 	<%= render :partial => 'disqus', :formats => [:html] %>
-	<%= link_to "Edit", edit_post_path(@post) %>
 </div>
