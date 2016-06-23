@@ -153,13 +153,13 @@ textarea {
 	min-height: 20em;
 }
 
-a {
-	text-decoration: none;
-	color: $dark;
-	&:hover {
-		color: $highlight;
-		}
-	}
+// a {
+// 	text-decoration: none;
+// 	color: $dark;
+// 	&:hover {
+// 		color: $highlight;
+// 		}
+// 	}
 	
 input[type="submit"], .button {
 	outline: none;
