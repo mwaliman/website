@@ -10,25 +10,31 @@
 </head>
 <body>
 
- <header id = 'main_navigation' class = 'clearfix'>
-  	<%= link_to "Matthew Waliman", root_path, class: "name" %>
- 	<nav>
- 		<%= link_to "Blog", posts_path %>
- 		<%= link_to "Projects", projects_path %>
- 		<a href="#">Contact</a>
- 	</nav>
- </header>
+	<header id = 'main_navigation' class = 'clearfix'>
+		<%= link_to "Matthew Waliman", root_path, class: "name" %>
+		<nav>
+			<%= link_to "Blog", posts_path %>
+			<%= link_to "Projects", projects_path %>
+			<a href="#">Contact</a>
+		</nav>
+	</header>
+	
+	<% if notice %>
+		<p class="notice"><%= notice %></p>
+	<% elsif alert %>
+		<p class="alert"><%= alert %></p>
+	<% end %>
 
-<%= yield %>
+	<%= yield %>
 
- <footer id='main_footer'>
- 	<p class = 'copyright'> &copy; 2016 Matthew Waliman</p>
- 	<nav>
- 		<a href="//twitter.com/themwaliman" target = "_blank"><i class="fa fa-twitter"></i></a>
- 		<a href="//github.com/mwaliman" target = "_blank"><i class="fa fa-github" ></i></a>
- 		<a href="#" target = "_blank"><i class="fa fa-linkedin-square"></i></a>
- 	</nav>
- </footer>
+	<footer id='main_footer'>
+		<p class = 'copyright'> &copy; 2016 Matthew Waliman</p>
+		<nav>
+			<a href="//twitter.com/themwaliman" target = "_blank"><i class="fa fa-twitter"></i></a>
+			<a href="//github.com/mwaliman" target = "_blank"><i class="fa fa-github" ></i></a>
+			<a href="#" target = "_blank"><i class="fa fa-linkedin-square"></i></a>
+		</nav>
+	</footer>
 
 </body>
 
